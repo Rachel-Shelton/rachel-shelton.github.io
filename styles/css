@@ -1,1 +1,104 @@
+body {
+  background-color: #f3dfc1;
+}
 
+.title {
+  text-align: center;
+};
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.frontpage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 32px;
+  border: 1px solid transparent;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  overflow: hidden;
+}
+
+.frontpage:before, 
+.frontpage:after {
+  position: absolute;
+  bottom: 0;
+  /*find height unit and value that are consitent across displays an devices*/
+  height: 105vh;
+  content: '';
+  width: calc(25% - 4px);
+}
+
+.frontpage:before {
+  left: 0;
+  border-right: 1px solid;
+}
+
+.frontpage:after {
+  right: 0;
+  border-left: 1px solid;
+}
+
+.fp-cell {
+  position: relative;
+  z-index: 2;
+  padding: 16px 0;
+ }
+
+.fp-cell--border-top:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -16px;
+  right: -16px;
+  border-top: 1px solid;
+}
+
+.fp-cell--1 {
+  height: 100vh;
+  text-align: center;
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 1;
+}
+
+
+.fp-cell--2 {
+  grid-row: 1;
+  grid-column: 1 / span 4;
+}
+
+.fp-cell--3 {
+  text-align: center;
+  grid-row: 3 / span 1;
+  grid-column: 2 / span 2;
+}
+
+.fp-cell--4 {
+  text-align: center;
+  grid-row: 3 / span 1;
+  grid-column: 4 / span 1;
+}
+
+.fp-cell--5 {
+  grid-row: 2;
+  grid-column: 1 / span 4;
+}
+
+.fp-cell--6 {
+  grid-row: 1;
+  grid-column: 4 / span 1;
+}
+
+.fp-item {
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  height: 100%;
+}
